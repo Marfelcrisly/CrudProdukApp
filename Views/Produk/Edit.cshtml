@@ -1,0 +1,47 @@
+@model CrudProdukApp.Models.Produk
+
+@{
+    ViewData["Title"] = "Edit Produk";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-sm rounded-3 mx-auto" style="max-width: 500px;">
+        <div class="card-header bg-primary text-white text-center">
+            <h1 class="card-title mb-0">Edit Produk</h1>
+        </div>
+        <div class="card-body">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <div class="mb-3">
+                    <label asp-for="Nama" class="form-label">Nama Produk</label>
+                    <input asp-for="Nama" class="form-control" />
+                    <span asp-validation-for="Nama" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Harga" class="form-label">Harga</label>
+                    <input asp-for="Harga" class="form-control" />
+                    <span asp-validation-for="Harga" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Stok" class="form-label">Stok</label>
+                    <input asp-for="Stok" class="form-control" />
+                    <span asp-validation-for="Stok" class="text-danger"></span>
+                </div>
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary rounded-pill">
+                        <i class="fas fa-save me-2"></i> Simpan
+                    </button>
+                    <a asp-action="Index" class="btn btn-secondary rounded-pill">
+                        <i class="fas fa-arrow-left me-2"></i> Kembali ke Daftar
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />

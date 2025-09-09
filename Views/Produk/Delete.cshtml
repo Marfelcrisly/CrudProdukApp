@@ -1,0 +1,49 @@
+@model CrudProdukApp.Models.Produk
+
+@{
+    ViewData["Title"] = "Hapus Produk";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-sm rounded-3 mx-auto" style="max-width: 500px;">
+        <div class="card-header bg-danger text-white text-center">
+            <h1 class="card-title mb-0">Hapus Produk</h1>
+        </div>
+        <div class="card-body">
+            <h4 class="text-danger mb-3">Anda yakin ingin menghapus produk ini?</h4>
+            <dl class="row">
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Nama)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Nama)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Harga)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Harga)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Stok)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Stok)
+                </dd>
+            </dl>
+        </div>
+        <div class="card-footer bg-light d-flex justify-content-between">
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <button type="submit" class="btn btn-danger rounded-pill">
+                    <i class="fas fa-trash-alt me-2"></i> Hapus
+                </button>
+            </form>
+            <a asp-action="Index" class="btn btn-secondary rounded-pill">
+                <i class="fas fa-arrow-left me-2"></i> Kembali ke Daftar
+            </a>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
